@@ -1,11 +1,11 @@
-# 构建斐讯N1 OpenWrt 固件脚本
+# 构建斐讯N1 OpenWrt固件脚本
 # Build OpenWrt Firmware for PHICOMM N1
 
 
 ## 使用方法
 
 1. `Linux`环境，推荐使用`Ubuntu 18.04 LTS`
-2. 编译好待构建的OpenWrt固件，不会的自行科普 [Lean's OpenWrt source](https://github.com/coolsnowwolf/lede "Lean's OpenWrt source")
+2. 编译好待构建的`OpenWrt`固件，不会的自行科普 [Lean's OpenWrt source](https://github.com/coolsnowwolf/lede "Lean's OpenWrt source")
 3. 克隆仓库到本地<br>
 `git clone https://github.com/tuanqing/mknop.git`
 4. 将你编译好的OpenWrt固件拷贝到 `OpenWrt`目录（可以复制多个固件到此）
@@ -24,7 +24,7 @@
 * 目录说明
 1. `armbian`，`armbian`相关文件
    * `phicomm-n1`，设备文件夹
-      * `root`，自定义文件
+      * `root`，自定义文件夹
       * `boot.tar.gz`，启动分区相关文件
       * `firmware.tar.gz`，设备驱动文件
       * `modules.tar.gz`，内核模块文件
@@ -42,10 +42,10 @@
      你可以在`Armnbian`镜像中提取，并按照目录结构，将文件打包为 `boot.tar.gz`、`firmware.tar.gz`、`modules.tar.gz`，最后替换 `armbian/phicomm-n1`目录下的相关文件即可
 
      **注意**：<br>
-     1、如果`Armnbian`镜像的`BOOT`分区下的`uEnv.txt`中的`FDT`参数不是`phicomm-n1`，则需要你手动更改，不更改会导致无法启动<br>
+     1、如果`Armnbian`镜像的`BOOT`分区下的`uEnv.txt`中的`FDT`参数不是`phicomm-n1`，则需要你手动更改，不更改则导致无法启动<br>
      2、替换内核后需要使用`-i`参数
 
    * 添加自定义文件<br>
       向`armbian/phicomm-n1/root`目录添加你想要的文件
 
-      **注意**：保持和`ROOTFS`分区相同的目录结构
+      **注意**：添加的文件应保持与`ROOTFS`分区目录结构一致

@@ -10,8 +10,7 @@
 `git clone https://github.com/tuanqing/mknop.git`
 4. 将你编译好的OpenWrt固件拷贝到 `OpenWrt`目录（可以复制多个固件到此）
 5. 使用`sudo`执行脚本<br>
-首次或替换内核之后：`sudo ./make -i`<br>
-二次直接：`sudo ./make`
+`sudo ./make`
 6. 按照提示操作，如：选择你要制作的固件、设置`ROOTFS`分区大小等
 7. 等待构建完成，默认输出文件夹为`out`
 8. 写盘启动，写盘工具推荐 [Etcher](https://github.com/balena-io/etcher/releases/download/v1.5.80/balenaEtcher-Portable-1.5.80.exe)
@@ -19,22 +18,22 @@
 **注意**：待构建的固件格式只支持 `rootfs.tar.gz`、`ext4-factory.img[.gz]`、`root.ext4[.gz]` 5种
 
 
-## 其他说明
+## 特别说明
 
 * 目录说明
-1. `armbian`，`armbian`相关文件
-   * `phicomm-n1`，设备文件夹
-      * `root`，自定义文件夹
-      * `boot.tar.gz`，启动分区相关文件
-      * `firmware.tar.gz`，设备驱动文件
-      * `modules.tar.gz`，内核模块文件
-2. `openwrt`，用于存放待构建的OpenWrt固件
-3. `.tmp`，临时文件夹，用于脚本转储
-4. `out`，输出文件夹，用于存放构建好的OpenWrt固件
+   * `armbian`，`armbian`相关文件
+      * `phicomm-n1`，设备文件夹
+         * `root`，自定义文件夹
+         * `boot.tar.gz`，启动分区相关文件
+         * `firmware.tar.gz`，设备驱动文件
+         * `modules.tar.gz`，内核模块文件
+   * `openwrt`，用于存放待构建的OpenWrt固件
+   * `out`，输出文件夹，用于存放构建好的OpenWrt固件
+   * `.tmp`，临时文件夹，用于脚本转储
 
 * 使用参数
    * `-d, --default`，使用默认配置构建，使用此参数将以 "使用 `OpenWrt`目录的第一个固件、`ROOTFS`分区大小默认为`512M`" 方式构建 
-   * `-i, --init`，第一次构建时使用此参数
+   * `-i, --init`，替换内核之后使用此参数
    * `-c, --clean`，清理临时文件和输出目录
 
 * 自定义
